@@ -20,7 +20,7 @@ const Search = () => {
     return (
         <form onSubmit={onSearchHandler} className='search-from' >
             <label for='search'>Search</label> &nbsp;
-            <input type='text' className='search' name='search' ref={searchInputRef}></input> &nbsp;
+            <input type='text' className='search' name='search' ref={searchInputRef} required></input> &nbsp;
             <button type="submit" className="search-button"> 🔎 </button>
         </form>
     )

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { getReddit } from "../../api/jsonReddit";
-import daysAgo from "../../app/dateConverter";
+import { popularReddit } from "../../api/jsonReddit";
+import daysAgo from '../../app/dateConverter'
+
 
 // home / landing page lists the most popular, current articles in a list
 
@@ -10,8 +11,8 @@ const HomePage = () => {
 
     useEffect(() => { 
         const getData = async () => {
-            const redditData = await getReddit();
-            setData(redditData);
+            const redditData = await popularReddit();
+            setData(redditData);            
         }
         
         getData();
@@ -37,7 +38,7 @@ const HomePage = () => {
                         <img src={article.data.thumbnail} />
                     </article>
                 </a>
-            ))}            
+            ))}
         </div>
     )   
 }
